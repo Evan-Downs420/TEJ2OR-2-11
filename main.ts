@@ -2,32 +2,37 @@
  *
  * Created by: Evan
  * Created on: Mar 2026
- * This program makes 2 random integers from 0-99
+ * This program will make 2 random numbers through 0-99 and will see which one is bigger
 */
 
-let first_number = 0
-let second_number = 0
+// variable
+let Number1 : number = randint(0,99)
+let Number2 : number = randint(0,99)
 
-// Generate random integers on start
-first_number = randint(0, 99)
-second_number = randint(0, 99)
-
-input.onButtonPressed(Button.A, function () {
-    basic.showNumber(first_number)
-    basic.clearScreen()
+// Press A
+input.onButtonPressed(Button.A, function() {
+  basic.clearScreen()
+  basic.showString("#1:")
+  basic.showNumber(Number1)
 })
 
+// Press B
 input.onButtonPressed(Button.B, function () {
-    basic.showNumber(second_number)
     basic.clearScreen()
+    basic.showString("#2:")
+    basic.showNumber(Number2)
 })
 
-input.onGesture(Gesture.Shake, function () {
-    if (first_number < second_number) {
-        // If first is 10 and second is 20, shows "10 < 20"
-        basic.showString(first_number + " < " + second_number)
-    } else {
-        // If first is 50 and second is 5, shows "50 > 5"
-        basic.showString(first_number + " > " + second_number)
-    }
+// Shake
+input.onGesture(Gesture.Shake, function(){
+ 
+ if (Number1 > Number2) {
+  basic.showNumber(Number1)
+  basic.showString(">")
+  basic.showNumber(Number2)
+ } else {
+  basic.showNumber(Number1)
+  basic.showString("<")
+  basic.showNumber(Number2)    
+ }     
 })
