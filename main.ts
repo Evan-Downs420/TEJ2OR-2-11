@@ -6,8 +6,8 @@
 */
 
 // variable
-let Number1 : number = randint(0,99)
-let Number2 : number = randint(0,99)
+const Number1 : number = randint(0,99)
+const Number2 : number = randint(0,99)
 
 // Press A
 input.onButtonPressed(Button.A, function() {
@@ -36,4 +36,3 @@ input.onGesture(Gesture.Shake, function(){
   basic.showNumber(Number2)    
  }     
 })
-
