@@ -6,33 +6,35 @@
 */
 
 // variable
-const Number1 : number = randint(0,99)
-const Number2 : number = randint(0,99)
+const numberFirst: number = randint(0,99)
+const numberSecond: number = randint(0,99)
 
-// Press A
+// Press a
 input.onButtonPressed(Button.A, function() {
   basic.clearScreen()
   basic.showString("#1:")
-  basic.showNumber(Number1)
+  basic.showNumber(numberFirst)
 })
 
-// Press B
+// Press b
 input.onButtonPressed(Button.B, function () {
     basic.clearScreen()
     basic.showString("#2:")
-    basic.showNumber(Number2)
+    basic.showNumber(numberSecond)
 })
 
-// Shake
+// shake
 input.onGesture(Gesture.Shake, function(){
  
- if (Number1 > Number2) {
-  basic.showNumber(Number1)
-  basic.showString(">")
-  basic.showNumber(Number2)
- } else {
-  basic.showNumber(Number1)
-  basic.showString("<")
-  basic.showNumber(Number2)    
- }     
+  if (numberFirst > numberSecond) {
+      basic.showNumber(numberFirst)
+      basic.showString(">")
+      basic.showNumber(numberSecond)
+      basic.showIcon(IconNames.Happy)
+  } else {
+      basic.showNumber(numberFirst)
+      basic.showString("<")
+      basic.showNumber(numberSecond)
+      basic.showIcon(IconNames.Sad)
+  }     
 })
